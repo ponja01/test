@@ -2,10 +2,13 @@ node {
     def app
 
     stage('Clone repository https://github.com/ponja01/test.git') {
-      
+         // Clean before build
+        cleanWs()
+         // We need to explicitly checkout from SCM here
+        sh 'git clone https://github.com/ponja01/test.git'
+        echo "Building ${env.JOB_NAME}..."
 
-        checkout scm
-    }
+            }
 
     stage('Build image') {
   
