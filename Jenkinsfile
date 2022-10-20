@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("ponja001/test")
+       app = docker.build("ponja001/get-started")
     }
 
         stage('Push image') {
