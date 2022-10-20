@@ -11,8 +11,10 @@ node {
             }
 
     stage('Build image') {
-  
-       app = docker.build("ponja001/get-started:test")
+       dir ("test") {
+           app = docker.build("ponja001/get-started:test")
+       }
+       
     }
 
         stage('Push image') {
